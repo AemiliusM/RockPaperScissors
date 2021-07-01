@@ -48,7 +48,9 @@ section {
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
 }
-
+div {
+    margin-left: 10%;
+}
 header {
     display: flex;
     justify-content: flex-end;

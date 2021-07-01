@@ -1,12 +1,20 @@
 // import functions and grab DOM elements
 import { didUserWin } from './utils.js';
 const battleButton = document.getElementById('Battle-btn');
-const winSpan = document.getElementById('wins');
-const lossesSpan = document.getElementById('losses');
+const rockWinSpan = document.getElementById('rock-wins');
+const rockLossesSpan = document.getElementById('rock-losses');
+const paperWinSpan = document.getElementById('paper-wins');
+const paperLossesSpan = document.getElementById('paper-losses');
+const scissorsWinSpan = document.getElementById('scissors-wins');
+const scissorsLossesSpan = document.getElementById('scissors-losses');
 const drawSpan = document.getElementById('draws');
 // initialize state
-let wins = 0;
-let losses = 0;
+let wins0 = 0;
+let losses0 = 0;
+let wins1 = 0;
+let losses1 = 0;
+let wins2 = 0;
+let losses2 = 0;
 let draws = 0;
 // set event listeners 
 battleButton.addEventListener('click', () => {
@@ -25,14 +33,28 @@ battleButton.addEventListener('click', () => {
     console.log(selected);
     const isWinner = didUserWin(userChoice, computerChoice);
     console.log(isWinner);
-    if (isWinner === 'win'){
-        wins++;
-    } else if (isWinner === 'loss'){
-        losses++;
-    } else 
+    if (isWinner === 'win0'){
+        wins0++;
+    } else if (isWinner === 'loss0'){
+        losses0++;
+    } if (isWinner === 'win1'){
+        wins1++;
+    } else if (isWinner === 'loss1'){
+        losses1++;
+    } if (isWinner === 'win2'){
+        wins2++;
+    } else if (isWinner === 'loss2'){
+        losses2++;
+    }  
+    else 
         draws++;
-    winSpan.textContent = wins;
-    lossesSpan.textContent = losses;
+
+    rockWinSpan.textContent = wins0;
+    rockLossesSpan.textContent = losses0;
+    paperWinSpan.textContent = wins1;
+    paperLossesSpan.textContent = losses1;
+    scissorsWinSpan.textContent = wins2;
+    scissorsLossesSpan.textContent = losses2;
     drawSpan.textContent = draws;
 });
   // get user input
