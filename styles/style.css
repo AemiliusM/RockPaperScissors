@@ -51,6 +51,9 @@ section {
 div {
     margin-left: 10%;
 }
+input{
+    display: none;
+}
 header {
     display: flex;
     justify-content: flex-end;

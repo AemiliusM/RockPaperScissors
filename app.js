@@ -8,6 +8,7 @@ const paperLossesSpan = document.getElementById('paper-losses');
 const scissorsWinSpan = document.getElementById('scissors-wins');
 const scissorsLossesSpan = document.getElementById('scissors-losses');
 const drawSpan = document.getElementById('draws');
+const resetBtn = document.getElementById('reset');
 // initialize state
 let wins0 = 0;
 let losses0 = 0;
@@ -17,6 +18,9 @@ let wins2 = 0;
 let losses2 = 0;
 let draws = 0;
 // set event listeners 
+resetBtn.addEventListener('click', () => {
+    location.reload();
+});
 battleButton.addEventListener('click', () => {
     const selected = document.querySelector('input[type=radio]:checked');
   
@@ -27,12 +31,9 @@ battleButton.addEventListener('click', () => {
         computerChoice = 1;
     } if (randomNum === 2) { 
         computerChoice = 2;
-    } console.log(typeof computerChoice);
-    console.log(randomNum);
-    console.log(typeof userChoice);
-    console.log(selected);
+    } 
     const isWinner = didUserWin(userChoice, computerChoice);
-    console.log(isWinner);
+    
     if (isWinner === 'win0'){
         wins0++;
     } else if (isWinner === 'loss0'){
