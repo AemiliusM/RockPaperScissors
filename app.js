@@ -25,6 +25,7 @@ battleButton.addEventListener('click', () => {
     const selected = document.querySelector('input[type=radio]:checked');
   
     const userChoice = Number(selected.value);
+    console.log(userChoice);
     let computerChoice = 0;
     let randomNum = Math.floor(Math.random() * 3);
     if (randomNum === 1) {

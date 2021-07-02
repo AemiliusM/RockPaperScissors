@@ -51,9 +51,13 @@ section {
 div {
     margin-left: 10%;
 }
-input{
+input[type="radio"] {
     display: none;
-}
+  }
+  input[type="radio"]:not(:checked) + img:hover {
+      opacity: 50%;
+      cursor: pointer;
+  }
 header {
     display: flex;
     justify-content: flex-end;
